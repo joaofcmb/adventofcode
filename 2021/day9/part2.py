@@ -1,42 +1,52 @@
-def get_basins(prev_start_idx, prev_sep_idx, prev_basins, widths, start_idx, sep_idx):
-    prev = list(zip(prev_basins, prev_start_idx, prev_sep_idx))
-    curr = list(zip(widths, start_idx, sep_idx))
-
-    basins = []
-    pi = ci = 0
-    while pi < len(prev) and ci < len(curr):
-        basin, p_start_i, p_sep_i = prev[pi]
-        width, start_i, sep_i = curr[ci]
-
-        while
+import functools
+import operator
+from functools import lru_cache
 
 
+@lru_cache(maxsize=None)
+def basin_size(x, y):
+    count = 0
+    stack = [(x, y)]
 
-    return []
+    while len(stack) > 0:
+        i, j = stack.pop()
+        if i < 0 or j < 0 or i >= len(matrix) or j >= len(matrix[i]) or matrix[i][j] == 9:
+            continue
+        else:
+            matrix[i][j] = 9
+            count += 1
+            stack.append((i-1, j))
+            stack.append((i+1, j))
+            stack.append((i, j-1))
+            stack.append((i, j+1))
+
+    return count
+
+def low_idxs(l_low_idxs, j, line):
+    return [i for i in l_low_idxs if is_col_low(i, j, line[i])]
+
+
+def is_col_low(i, j, point):
+    if j == 0:
+        return point < matrix[j+1][i]
+    elif j == len(matrix) - 1:
+        return point < matrix[j-1][i]
+    else:
+        return point < matrix[j+1][i] and point < matrix[j-1][i]
+
+
+def is_line_low(i, line):
+    if i == 0:
+        return line[i] < line[i+1]
+    elif i == len(line) - 1:
+        return line[i] < line[i-1]
+    else:
+        return line[i] < line[i-1] and line[i] < line[i+1]
 
 
 with open('in.txt') as f:
-    matrix = [x for x in f.read().splitlines()]
+    matrix = [list(map(int, list(x))) for x in f.read().splitlines()]
 
-    prev_sep_idx = list(range(len(matrix[0])))
-    prev_start_idx = [0] + prev_sep_idx[:-1]
-    prev_basins = [0] * len(matrix[0])
-    for i, line in enumerate(matrix):
-        widths = list(map(len, line.split('9')))
-        sep_idx = [sum(widths[0:i+1]) + len(widths[0:i+1]) - 1 for i in range(len(widths))]
-        start_idx = [0] + sep_idx[:-1]
-        basins, start_idx, sep_idx = get_basins(prev_start_idx, prev_sep_idx, prev_basins, widths, start_idx, sep_idx)
-        # basins = [w + sum(
-        #     [pb for (pb, p_start_i, psi) in zip(prev_basins, prev_start_idx, prev_sep_idx)
-        #      if (start_si + 1 < psi <= si + 1) or (start_si + 1 < p_start_i <= si + 1)]
-        # ) for (w, start_si, si) in zip(widths, start_idx, sep_idx)]
-
-        print(widths)
-        print(start_idx)
-        print(sep_idx)
-        print(basins)
-        print()
-
-        prev_sep_idx = sep_idx
-        prev_start_idx = start_idx
-        prev_basins = basins
+    line_low_idxs = [[i for i in range(len(line)) if is_line_low(i, line)] for line in matrix]
+    basin_sizes = [basin_size(i, j) for (i, line) in enumerate(matrix) for j in low_idxs(line_low_idxs[i], i, line)]
+    print(functools.reduce(operator.mul, sorted(basin_sizes, reverse=True)[0:3]))
