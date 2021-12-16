@@ -21,3 +21,5 @@ This repository compiles my solutions to [Advent of Code](https://adventofcode.c
 | [Day 13](https://adventofcode.com/2021/day/13) |  Python  |   ⭐    |   ⭐    |
 | [Day 14](https://adventofcode.com/2021/day/14) |  Python  |   ⭐    |   ⭐    |
 | [Day 15](https://adventofcode.com/2021/day/15) |  Python  |   ⭐    |   ⭐    |
+| [Day 16](https://adventofcode.com/2021/day/16) |  Python  |   ⭐    |   ⭐    |
+
