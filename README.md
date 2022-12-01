@@ -2,6 +2,12 @@
 
 This repository compiles my solutions to [Advent of Code](https://adventofcode.com/), an Advent calendar with programming puzzles each day.
 
+## Advent of Code 2022
+
+|                      Day                       | Language | Part 1 | Part 2 |
+|:----------------------------------------------:|:--------:|:------:|:------:|
+|  [Day 1](https://adventofcode.com/2022/day/1)  |   Rust   |   ⭐    |   ⭐    |
+
 ## Advent of Code 2021
 
 |                      Day                       | Language | Part 1 | Part 2 |
