@@ -7,6 +7,7 @@ This repository compiles my solutions to [Advent of Code](https://adventofcode.c
 |                      Day                       | Language | Part 1 | Part 2 |
 |:----------------------------------------------:|:--------:|:------:|:------:|
 |  [Day 1](https://adventofcode.com/2022/day/1)  |   Rust   |   ⭐    |   ⭐    |
+|  [Day 2](https://adventofcode.com/2022/day/2)  |   Rust   |   ⭐    |   ⭐    |
 
 ## Advent of Code 2021
 

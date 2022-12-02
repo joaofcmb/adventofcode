@@ -4,14 +4,14 @@ fn main() {
 
   let input_lines: Vec<&str> = input.lines().collect();
 
-  let calories_per_elf = input_lines
+  let lines_grouped_by_elf = input_lines
     .split(|line| line.is_empty());
 
-  let mut total_calories_per_elf: Vec<i32> = calories_per_elf
+  let mut total_calories_per_elf: Vec<i32> = lines_grouped_by_elf
     .map(|lines| {
       lines.iter()
       .map(|line| line.parse::<i32>().unwrap())
-      .sum::<i32>()
+      .sum()
     }).collect();
 
   total_calories_per_elf.sort_by(|a, b| b.cmp(a));
