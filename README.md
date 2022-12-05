@@ -9,7 +9,8 @@ This repository compiles my solutions to [Advent of Code](https://adventofcode.c
 |  [Day 1](https://adventofcode.com/2022/day/1)  |   Rust   |   ⭐    |   ⭐    |
 |  [Day 2](https://adventofcode.com/2022/day/2)  |   Rust   |   ⭐    |   ⭐    |
 |  [Day 3](https://adventofcode.com/2022/day/3)  |   Rust   |   ⭐    |   ⭐    |
-|  [Day 4](https://adventofcode.com/2022/day/3)  |   Rust   |   ⭐    |   ⭐    |
+|  [Day 4](https://adventofcode.com/2022/day/4)  |   Rust   |   ⭐    |   ⭐    |
+|  [Day 5](https://adventofcode.com/2022/day/5)  |   Rust   |   ⭐    |   ⭐    |
 
 ## Advent of Code 2021
 
