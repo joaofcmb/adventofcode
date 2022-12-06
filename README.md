@@ -11,6 +11,7 @@ This repository compiles my solutions to [Advent of Code](https://adventofcode.c
 |  [Day 3](https://adventofcode.com/2022/day/3)  |   Rust   |   ⭐    |   ⭐    |
 |  [Day 4](https://adventofcode.com/2022/day/4)  |   Rust   |   ⭐    |   ⭐    |
 |  [Day 5](https://adventofcode.com/2022/day/5)  |   Rust   |   ⭐    |   ⭐    |
+|  [Day 6](https://adventofcode.com/2022/day/6)  |   Rust   |   ⭐    |   ⭐    |
 
 ## Advent of Code 2021
 
